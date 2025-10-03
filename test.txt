@@ -1,0 +1,42 @@
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Bytecode / caches
+__pycache__/
+*.py[cod]
+*.pyc
+*.pyo
+
+# Django local files
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+*.log
+
+# Uploaded media and collected/static output
+/media/
+/staticfiles/
+/static/
+
+# Test / coverage / tooling caches
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.mypy_cache/
+.pytype/
+.ruff_cache/
+
+# Packaging/build
+*.egg-info/
+pip-wheel-metadata/
+
+# Editor / OS (optional; top-level may already cover these)
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
