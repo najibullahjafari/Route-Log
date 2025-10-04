@@ -29,7 +29,7 @@ RouteLog Pro is a robust web application for advanced route logging and manageme
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/your-repo/routelog-pro.git
+git clone https://github.com/najibullahjafari/Route-Log
 cd routelog-pro/backend
 ```
 
@@ -136,4 +136,4 @@ Contributions are welcome! Please fork the repository and submit a pull request.
 
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the [MIT License](LICENSE).
