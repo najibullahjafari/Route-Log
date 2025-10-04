@@ -13,6 +13,12 @@ dist-ssr
 *.local
 backend/venv
 backend/db.sqlite3
+backend/api/__pycache__
+backend/users/__pycache__
+backend/api/services/__pycache__
+backend/api/migrations/__pycache__
+backend/users/migrations/__pycache__
+backend/db.sqlite3
 backend/config/__pycache__
 
 # Editor directories and files
@@ -25,3 +31,7 @@ backend/config/__pycache__
 *.njsproj
 *.sln
 *.sw?
+
+
+#Ignore vscode AI rules
+.github\instructions\codacy.instructions.md

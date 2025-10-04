@@ -23,7 +23,7 @@ import { MapContainer, Marker, TileLayer, useMapEvents } from 'react-leaflet';
 import type { LocationOption } from '../data/locations';
 import { MAJOR_US_LOCATIONS } from '../data/locations';
 
-const DEFAULT_POSITION: [number, number] = [39.8283, -98.5795]; // geographic center of contiguous US
+const DEFAULT_POSITION: [number, number] = [20, 0]; // global center showing most continents
 
 const MapPinSelector: React.FC<{
     value: [number, number] | null;
@@ -188,7 +188,7 @@ const LocationPicker: React.FC<LocationPickerProps> = ({
                     <Box sx={{ height: 400 }}>
                         <MapContainer
                             center={coords ?? DEFAULT_POSITION}
-                            zoom={coords ? 7 : 4}
+                            zoom={coords ? 7 : 2}
                             style={{ height: '100%', width: '100%' }}
                         >
                             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />

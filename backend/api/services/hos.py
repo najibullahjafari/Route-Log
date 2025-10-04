@@ -35,8 +35,9 @@ def _approximate_location(query: str) -> Dict:
     lat_seed = int.from_bytes(digest[:4], "big") / 0xFFFFFFFF
     lon_seed = int.from_bytes(digest[4:8], "big") / 0xFFFFFFFF
 
-    latitude = 25 + lat_seed * (49 - 25)
-    longitude = -124 + lon_seed * (58)
+    # Generate coordinates anywhere in the world
+    latitude = -90 + lat_seed * 180  # -90 to 90
+    longitude = -180 + lon_seed * 360  # -180 to 180
 
     return {
         "query": query,
@@ -48,6 +49,20 @@ def _approximate_location(query: str) -> Dict:
 
 
 def _geocode_location(query: str) -> Dict:
+    # Check if this is already a coordinate string from map selection
+    import re
+    coord_match = re.search(r'Pinned location \((-?\d+\.\d+),\s*(-?\d+\.\d+)\)', query)
+    if coord_match:
+        lat = float(coord_match.group(1))
+        lng = float(coord_match.group(2))
+        return {
+            "query": query,
+            "latitude": lat,
+            "longitude": lng,
+            "display_name": f"Pinned location ({lat:.4f}, {lng:.4f})",
+            "approximate": False,
+        }
+
     try:
         location = _geocode(query)
     except (GeocoderTimedOut, GeocoderUnavailable, GeocoderServiceError, requests.RequestException) as exc:
