@@ -2,6 +2,8 @@
 
 RouteLog Pro is a robust web application for advanced route logging and management, built with Django for the backend API and React for the dynamic frontend. It leverages TypeScript for type safety and Vite for fast development builds.
 
+The application is available live at [route log pro](http://routelog.kic.codes/) .
+
 ## Features
 
 - **Backend (Django)**: RESTful API with Django REST Framework for handling route data, user authentication, and database operations.
@@ -78,7 +80,7 @@ npm install
 npm run dev
 ```
 
-The application will be available at `http://localhost:3000` for the frontend and `http://localhost:8000` for the backend.
+The application is available live at [route log pro](http://routelog.kic.codes/) 
 
 ## ESLint Configuration
 
